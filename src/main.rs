@@ -1,4 +1,5 @@
 mod enums;
+mod expressions;
 mod hashmap;
 mod string;
 mod tuples;
@@ -10,4 +11,5 @@ fn main() {
     string::run();
     hashmap::run();
     tuples::run();
+    expressions::run();
 }
