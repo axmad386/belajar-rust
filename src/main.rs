@@ -1,3 +1,4 @@
+mod conversion;
 mod enums;
 mod expressions;
 mod hashmap;
@@ -12,4 +13,5 @@ fn main() {
     hashmap::run();
     tuples::run();
     expressions::run();
+    conversion::run();
 }
