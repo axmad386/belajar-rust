@@ -12,6 +12,14 @@ pub fn run() {
         }
     }
 
+    impl Angka {
+        fn increment(&mut self) {
+            self.nilai += 1;
+        }
+        fn total(&self) {
+            println!("totalnya: {}", self.nilai);
+        }
+    }
     // dengan implementasi trait from, kita bisa membuat conversi dari i32 menjadi struct Angka
     let num = Angka::from(30);
 
@@ -21,6 +29,9 @@ pub fn run() {
 
     // cara lain conversi yaitu dengan menggunakan trait into
     let int = 26;
-    let num: Angka = int.into();
+    let mut num: Angka = int.into();
     println!("num adalah {:?}", num);
+
+    num.increment();
+    num.total();
 }

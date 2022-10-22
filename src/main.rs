@@ -3,6 +3,7 @@ mod enums;
 mod expressions;
 mod hashmap;
 mod string;
+mod traits;
 mod tuples;
 mod vecs;
 
@@ -14,4 +15,5 @@ fn main() {
     tuples::run();
     expressions::run();
     conversion::run();
+    traits::run();
 }
