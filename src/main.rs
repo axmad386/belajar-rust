@@ -19,6 +19,7 @@ fn main() {
         "traits" => match args.submodule.as_deref() {
             Some("basic") => traits::basic::run(),
             Some("derive") => traits::derive::run(),
+            Some("dynamic") => traits::dynamic::run(),
             _ => unreachable!("submodule tidak ditemukan"),
         },
         "tuples" => tuples::run(),
