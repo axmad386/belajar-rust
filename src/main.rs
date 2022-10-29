@@ -20,6 +20,7 @@ fn main() {
             Some("basic") => traits::basic::run(),
             Some("derive") => traits::derive::run(),
             Some("dynamic") => traits::dynamic::run(),
+            Some("overload") => traits::overload::run(),
             _ => unreachable!("submodule tidak ditemukan"),
         },
         "tuples" => tuples::run(),
