@@ -6,6 +6,7 @@ mod hashmap;
 mod string;
 mod traits;
 mod tuples;
+mod variables;
 mod vecs;
 
 fn main() {
@@ -25,6 +26,13 @@ fn main() {
         },
         "tuples" => tuples::run(),
         "vecs" => vecs::run(),
+        "variables" => match args.submodule.as_deref() {
+            Some("mutability") => variables::mutability::run(),
+            Some("scope") => variables::scope::run(),
+            Some("shadowing") => variables::shadowing::run(),
+            Some("destructuring") => variables::destructuring::run(),
+            _ => unreachable!("submodule tidak ditemukan"),
+        },
         _ => unreachable!("module tidak ditemukan"),
     }
 }
