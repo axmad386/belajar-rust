@@ -8,6 +8,7 @@ mod traits;
 mod tuples;
 mod variables;
 mod vecs;
+mod types;
 
 fn main() {
     let args = Cli::parse();
@@ -33,6 +34,12 @@ fn main() {
             Some("destructuring") => variables::destructuring::run(),
             _ => unreachable!("submodule tidak ditemukan"),
         },
+        "types" => match args.submodule.as_deref(){
+            Some("integer") => types::integer::run(),
+            Some("float") => types::float::run(),
+            Some("range") => types::range::run(),
+            _ => unreachable!("submodule tidak ditemukan"),
+        }
         _ => unreachable!("module tidak ditemukan"),
     }
 }
