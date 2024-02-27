@@ -8,10 +8,11 @@ mod traits;
 mod tuples;
 mod variables;
 mod vecs;
-mod types;
+mod basic_types;
 
 fn main() {
     let args = Cli::parse();
+    println!("{}", args.submodule.as_deref().unwrap());
     match args.module.as_str() {
         "conversion" => conversion::run(),
         "enums" => enums::run(),
@@ -34,10 +35,8 @@ fn main() {
             Some("destructuring") => variables::destructuring::run(),
             _ => unreachable!("submodule tidak ditemukan"),
         },
-        "types" => match args.submodule.as_deref(){
-            Some("integer") => types::integer::run(),
-            Some("float") => types::float::run(),
-            Some("range") => types::range::run(),
+        "basic_types" => match args.submodule.as_deref(){
+            Some("number") => basic_types::number::run(),
             _ => unreachable!("submodule tidak ditemukan"),
         }
         _ => unreachable!("module tidak ditemukan"),
