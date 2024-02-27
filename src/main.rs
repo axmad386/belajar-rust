@@ -12,7 +12,6 @@ mod basic_types;
 
 fn main() {
     let args = Cli::parse();
-    println!("{}", args.submodule.as_deref().unwrap());
     match args.module.as_str() {
         "conversion" => conversion::run(),
         "enums" => enums::run(),
@@ -37,6 +36,9 @@ fn main() {
         },
         "basic_types" => match args.submodule.as_deref(){
             Some("number") => basic_types::number::run(),
+            Some("char") => basic_types::char::run(),
+            Some("bool") => basic_types::bool::run(),
+            Some("unit") => basic_types::unit::run(),
             _ => unreachable!("submodule tidak ditemukan"),
         }
         _ => unreachable!("module tidak ditemukan"),
