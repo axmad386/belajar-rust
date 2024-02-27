@@ -9,6 +9,7 @@ mod tuples;
 mod variables;
 mod vecs;
 mod basic_types;
+mod ownership;
 
 fn main() {
     let args = Cli::parse();
@@ -43,6 +44,7 @@ fn main() {
             Some("function") => basic_types::function::run(),
             _ => unreachable!("submodule tidak ditemukan"),
         }
+        "ownership" => ownership::run(),
         _ => unreachable!("module tidak ditemukan"),
     }
 }
