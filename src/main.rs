@@ -10,6 +10,7 @@ mod variables;
 mod vecs;
 mod basic_types;
 mod ownership;
+mod ref_borrow;
 
 fn main() {
     let args = Cli::parse();
@@ -45,6 +46,7 @@ fn main() {
             _ => unreachable!("submodule tidak ditemukan"),
         }
         "ownership" => ownership::run(),
+        "ref_borrow" => ref_borrow::run(),
         _ => unreachable!("module tidak ditemukan"),
     }
 }
