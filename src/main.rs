@@ -40,6 +40,7 @@ fn main() {
             Some("bool") => basic_types::bool::run(),
             Some("unit") => basic_types::unit::run(),
             Some("statement_expression") => basic_types::statement_expression::run(),
+            Some("function") => basic_types::function::run(),
             _ => unreachable!("submodule tidak ditemukan"),
         }
         _ => unreachable!("module tidak ditemukan"),
