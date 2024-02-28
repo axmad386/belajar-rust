@@ -51,6 +51,7 @@ fn main() {
         "compound" => match args.submodule.as_deref(){
             Some("string") => compound::string::run(),
             Some("array") => compound::array::run(),
+            Some("slice") => compound::slice::run(),
             _ => unreachable!("submodule tidak ditemukan"),
         }
         _ => unreachable!("module tidak ditemukan"),
