@@ -11,6 +11,7 @@ mod vecs;
 mod basic_types;
 mod ownership;
 mod ref_borrow;
+mod compound;
 
 fn main() {
     let args = Cli::parse();
@@ -47,6 +48,10 @@ fn main() {
         }
         "ownership" => ownership::run(),
         "ref_borrow" => ref_borrow::run(),
+        "compound" => match args.submodule.as_deref(){
+            Some("string") => compound::string::run(),
+            _ => unreachable!("submodule tidak ditemukan"),
+        }
         _ => unreachable!("module tidak ditemukan"),
     }
 }
