@@ -50,6 +50,7 @@ fn main() {
         "ref_borrow" => ref_borrow::run(),
         "compound" => match args.submodule.as_deref(){
             Some("string") => compound::string::run(),
+            Some("array") => compound::array::run(),
             _ => unreachable!("submodule tidak ditemukan"),
         }
         _ => unreachable!("module tidak ditemukan"),

@@ -160,13 +160,13 @@ fn byte_string() {
                     like with normal raw strings"#;
 
     // Byte strings don't have to be UTF-8
-    let shift_jis = b"\x82\xe6\x82\xa8\x82\xb1\x82\xbb"; // "ようこそ" In SHIFT-JIS
+    /* let shift_jis = b"\x82\xe6\x82\xa8\x82\xb1\x82\xbb"; // "ようこそ" In SHIFT-JIS
 
     // But then they can't always be converted to `str`
     match str::from_utf8(shift_jis) {
         Ok(my_str) => println!("Conversion successful: '{}'", my_str),
         Err(e) => println!("Conversion failed: {:?}", e),
-    };
+    }; */
 }
 
 
