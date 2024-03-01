@@ -53,6 +53,7 @@ fn main() {
             Some("array") => compound::array::run(),
             Some("slice") => compound::slice::run(),
             Some("tuple") => compound::tuple::run(),
+            Some("structs") => compound::structs::run(),
             _ => unreachable!("submodule tidak ditemukan"),
         }
         _ => unreachable!("module tidak ditemukan"),
