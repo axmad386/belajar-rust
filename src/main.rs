@@ -12,6 +12,7 @@ mod traits;
 mod tuples;
 mod variables;
 mod vecs;
+mod flow;
 
 fn main() {
     let args = Cli::parse();
@@ -55,6 +56,13 @@ fn main() {
             Some("tuple") => compound::tuple::run(),
             Some("structs") => compound::structs::run(),
             Some("enums") => compound::enums::run(),
+            _ => unreachable!("submodule tidak ditemukan"),
+        },
+        "flow" => match args.submodule.as_deref() {
+            Some("if_else") => flow::if_else::run(),
+            Some("for_in") => flow::for_in::run(),
+            Some("while_loop") => flow::while_loop::run(),
+            Some("loops") => flow::loops::run(),
             _ => unreachable!("submodule tidak ditemukan"),
         },
         _ => unreachable!("module tidak ditemukan"),
