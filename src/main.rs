@@ -13,6 +13,7 @@ mod tuples;
 mod variables;
 mod vecs;
 mod flow;
+mod pattern;
 
 fn main() {
     let args = Cli::parse();
@@ -65,6 +66,11 @@ fn main() {
             Some("loops") => flow::loops::run(),
             _ => unreachable!("submodule tidak ditemukan"),
         },
+        "pattern" => match args.submodule.as_deref() {
+            Some("match_expression") => pattern::match_expression::run(),
+            Some("patterns") => pattern::patterns::run(),
+            _ => unreachable!("submodule tidak ditemukan"),
+        }
         _ => unreachable!("module tidak ditemukan"),
     }
 }
