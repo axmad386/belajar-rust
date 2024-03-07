@@ -15,6 +15,7 @@ mod vecs;
 mod flow;
 mod pattern;
 mod function;
+mod generic;
 
 fn main() {
     let args = Cli::parse();
@@ -75,6 +76,10 @@ fn main() {
         "function" => match args.submodule.as_deref(){
             Some("associated") => function::associated::run(),
             Some("method") => function::method::run(),
+            _ => unreachable!("submodule tidak ditemukan"),
+        },
+        "generic" => match args.submodule.as_deref(){
+            Some("functions") => generic::functions::run(),
             _ => unreachable!("submodule tidak ditemukan"),
         }
         _ => unreachable!("module tidak ditemukan"),
