@@ -14,6 +14,7 @@ mod variables;
 mod vecs;
 mod flow;
 mod pattern;
+mod function;
 
 fn main() {
     let args = Cli::parse();
@@ -69,6 +70,11 @@ fn main() {
         "pattern" => match args.submodule.as_deref() {
             Some("match_expression") => pattern::match_expression::run(),
             Some("patterns") => pattern::patterns::run(),
+            _ => unreachable!("submodule tidak ditemukan"),
+        },
+        "function" => match args.submodule.as_deref(){
+            Some("associated") => function::associated::run(),
+            Some("method") => function::method::run(),
             _ => unreachable!("submodule tidak ditemukan"),
         }
         _ => unreachable!("module tidak ditemukan"),
